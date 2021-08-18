@@ -1,9 +1,13 @@
 import { Typography } from '@material-ui/core';
 import React from 'react';
+import { useSelector } from 'react-redux';
 
 const CompletedTodosCount = () => {
-    return <Typography variant="h6" gutterBottom align="center" style={{marginTop: "10px"}}>
-        Completed Todos: 0
+
+    const count = useSelector(state => state.todos.filter(todo => todo.completed === true).length)
+
+    return <Typography variant="h6" gutterBottom align="left" style={{marginTop: "12px"}}>
+        Completed Todos: {count}
     </Typography>
 }
 
