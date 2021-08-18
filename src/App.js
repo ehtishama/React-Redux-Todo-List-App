@@ -1,25 +1,20 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import { Container, CssBaseline } from "@material-ui/core";
+import NewTodoForm from "./components/new-todo-form";
+import TodoItemsList from "./components/todo-items-list";
+import CompletedTodosCount from "./components/completed-todos-count";
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    return (
+        <>
+            <CssBaseline />
+            <Container maxWidth="sm">
+                <NewTodoForm />
+                <TodoItemsList />
+                <CompletedTodosCount />
+            </Container>
+        </>
+    );
 }
 
 export default App;
